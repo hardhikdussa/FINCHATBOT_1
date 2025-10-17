@@ -1,4 +1,4 @@
- Colab cell 2 — write the Streamlit app
+# Colab cell 2 — write the Streamlit app
 
 import os
 import streamlit as st
@@ -15,7 +15,7 @@ def safe_load_generation_pipeline():
     OOM, fall back to a small local model (gpt2) for demo purposes.
     """
     model_id = "ibm-granite/granite-3.3-2b-instruct"
-    fallback = "gpt2"
+    fallback =  "ibm-granite/granite-3.3-2b-instruct"
     try:
         st.sidebar.info(f"Attempting to load model: {model_id}")
         gen = pipeline("text-generation", model=model_id, device=0 if torch.cuda.is_available() else -1)
